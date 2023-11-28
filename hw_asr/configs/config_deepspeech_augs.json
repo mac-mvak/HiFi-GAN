@@ -1,0 +1,209 @@
+{
+  "name": "deepspeech",
+  "n_gpu": 1,
+  "preprocessing": {
+    "sr": 16000,
+    "spectrogram": {
+      "type": "MelSpectrogram",
+      "args": {
+      }
+    },
+    "log_spec": true
+  },
+  "augmentations": {
+    "wave": [{
+     "type": "AddNoise",
+     "args": {
+      "p" :0.05,
+      "snr" : 20
+      }
+    },
+    {"type": "Reverb",
+      "args":{"sample_rate":16000,
+    "reverberance_min":90,
+    "reverberance_max":91,
+    "room_size_min":90,
+    "room_size_max":91,
+    "p":0.05}},
+    {"type": "LowPassFilter",
+      "args":{"sample_rate":16000,
+    "min_cutoff_freq":3000,
+    "max_cutoff_freq":3001,
+    "p":0.05}}
+    ],
+    "spectrogram": []
+  },
+  "arch": {
+    "type": "DeepSpeech",
+    "args": {
+      "conv_type" : "Conv1d",
+      "convs_params" : [{
+        "convolution": {
+          "in_channels":128,
+          "out_channels" :640,
+          "kernel_size" : 5,
+          "stride" : 1
+        },
+        "batch_norm":{
+          "num_features":640
+        }
+      }, {
+        "convolution": {
+          "in_channels":640,
+          "out_channels" :640,
+          "kernel_size" : 5,
+          "stride" : 2
+        },
+        "batch_norm":{
+          "num_features":640
+        }
+      }],
+      "grus_params" : [
+        { "gru":{
+        "input_size":640,
+        "hidden_size": 256,
+        "batch_first": true,
+        "dropout" :0.3,
+        "bidirectional":true
+        },
+        "batch_norm":{
+          "num_features":512
+        }
+      }, { "gru":{
+        "input_size":512,
+        "hidden_size": 256,
+        "batch_first": true,
+        "dropout" :0.1,
+        "bidirectional":true
+        },
+        "batch_norm":{
+          "num_features":512
+        }
+      }],
+      "n_feats": 128
+      }
+  },
+  "data": {
+    "train": {
+      "batch_size": 128,
+      "num_workers": 8,
+      "datasets": [
+        {
+          "type": "LibrispeechDataset",
+          "args": {
+            "part": "train-clean-100",
+            "max_audio_length": 40.0,
+            "max_text_length": 400
+          }
+        },
+        {
+          "type": "LibrispeechDataset",
+          "args": {
+            "part": "train-clean-360",
+            "max_audio_length": 40.0,
+            "max_text_length": 400
+          }
+        },
+        {
+          "type": "LibrispeechDataset",
+          "args": {
+            "part": "train-other-500",
+            "max_audio_length": 40.0,
+            "max_text_length": 400
+          }
+        }
+      ]
+    },
+    "val": {
+      "batch_size": 128,
+      "num_workers": 5,
+      "datasets": [
+        {
+          "type": "LibrispeechDataset",
+          "args": {
+            "part": "dev-clean"
+          }
+        }
+      ]
+    },
+    "val-other": {
+      "batch_size": 128,
+      "num_workers": 5,
+      "datasets": [
+        {
+          "type": "LibrispeechDataset",
+          "args": {
+            "part": "dev-other"
+          }
+        }
+      ]
+    },
+    "test-clean": {
+      "batch_size": 64,
+      "num_workers": 5,
+      "datasets": [
+        {
+          "type": "LibrispeechDataset",
+          "args": {
+            "part": "test-clean"
+          }
+        }
+      ]
+    },
+    "test-other": {
+      "batch_size": 64,
+      "num_workers": 5,
+      "datasets": [
+        {
+          "type": "LibrispeechDataset",
+          "args": {
+            "part": "test-other"
+          }
+        }]
+  }},
+  "optimizer": {
+    "type": "Adam",
+    "args": {
+      "lr": 3e-3
+    }
+  },
+  "loss": {
+    "type": "CTCLoss",
+    "args": {}
+  },
+  "metrics": [
+    {
+      "type": "ArgmaxWERMetric",
+      "args": {
+        "name": "WER (argmax)"
+      }
+    },
+    {
+      "type": "ArgmaxCERMetric",
+      "args": {
+        "name": "CER (argmax)"
+      }
+   }
+  ],
+  "lr_scheduler": {
+    "type": "ReduceLROnPlateau",
+    "args": {
+      "mode": "min",
+      "factor": 0.1,
+      "patience": 7,
+      "threshold": 0.0001
+    }
+  },
+  "trainer": {
+    "epochs": 200,
+    "save_dir": "saved/",
+    "save_period": 5,
+    "verbosity": 2,
+    "monitor": "min val_loss",
+    "early_stop": 100,
+    "visualize": "wandb",
+    "wandb_project": "asr_project",
+    "len_epoch": 100,
+    "grad_norm_clip": 10
+  }
+}
