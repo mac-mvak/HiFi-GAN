@@ -7,6 +7,9 @@ from pathlib import Path
 
 import torchaudio
 from hw_asr.base.base_dataset import BaseDataset
+from torch.utils.data import Dataset
+from hw_asr.utils.parse_config import ConfigParser
+
 from hw_asr.utils import ROOT_PATH
 from speechbrain.utils.data_utils import download_file
 from tqdm import tqdm
@@ -18,15 +21,38 @@ URL_LINKS = {
 }
 
 
-class LJspeechDataset(BaseDataset):
-    def __init__(self, part, data_dir=None, *args, **kwargs):
+class LJspeechDataset(Dataset):
+    def __init__(self, part, config_parser: ConfigParser
+                 , data_dir=None, *args, **kwargs):
+        self.config_parser = config_parser
         if data_dir is None:
             data_dir = ROOT_PATH / "data" / "datasets" / "ljspeech"
             data_dir.mkdir(exist_ok=True, parents=True)
         self._data_dir = data_dir
-        index = self._get_or_load_index(part)
+        index = self._get_or_load_index()
+        self._index = index
 
-        super().__init__(index, *args, **kwargs)
+        super().__init__()
+
+    def __getitem__(self, ind):
+        data_dict = self._index[ind]
+        audio_path = data_dict["path"]
+        audio_wave = self.load_audio(audio_path)
+        return {
+            "audio": audio_wave,
+            "spec_cfg": self.config_parser['preprocessing']["spectrogram_params"]
+            }
+    
+    def load_audio(self, path):
+        audio_tensor, sr = torchaudio.load(path)
+        audio_tensor = audio_tensor[0:1, :]  # remove all channels but the first
+        target_sr = self.config_parser["preprocessing"]["sr"]
+        if sr != target_sr:
+            audio_tensor = torchaudio.functional.resample(audio_tensor, sr, target_sr)
+        return audio_tensor
+    
+    def __len__(self):
+        return len(self._index)
 
     def _load_dataset(self):
         arch_path = self._data_dir / "LJSpeech-1.1.tar.bz2"
@@ -35,7 +61,7 @@ class LJspeechDataset(BaseDataset):
         shutil.unpack_archive(arch_path, self._data_dir)
         for fpath in (self._data_dir / "LJSpeech-1.1").iterdir():
             shutil.move(str(fpath), str(self._data_dir / fpath.name))
-        os.remove(str(arch_path))
+        #os.remove(str(arch_path))
         shutil.rmtree(str(self._data_dir / "LJSpeech-1.1"))
 
         files = [file_name for file_name in (self._data_dir / "wavs").iterdir()]
@@ -50,20 +76,20 @@ class LJspeechDataset(BaseDataset):
         shutil.rmtree(str(self._data_dir / "wavs"))
 
 
-    def _get_or_load_index(self, part):
-        index_path = self._data_dir / f"{part}_index.json"
+    def _get_or_load_index(self):
+        index_path = self._data_dir / f"ljspeech_index.json"
         if index_path.exists():
             with index_path.open() as f:
                 index = json.load(f)
         else:
-            index = self._create_index(part)
+            index = self._create_index()
             with index_path.open("w") as f:
                 json.dump(index, f, indent=2)
         return index
 
-    def _create_index(self, part):
+    def _create_index(self):
         index = []
-        split_dir = self._data_dir / part
+        split_dir = self._data_dir / 'ljspeech'
         if not split_dir.exists():
             self._load_dataset()
 
@@ -72,7 +98,7 @@ class LJspeechDataset(BaseDataset):
             if any([f.endswith(".wav") for f in filenames]):
                 wav_dirs.add(dirpath)
         for wav_dir in tqdm(
-                list(wav_dirs), desc=f"Preparing ljspeech folders: {part}"
+                list(wav_dirs), desc=f"Preparing ljspeech folders: {'ljspeech'}"
         ):
             wav_dir = Path(wav_dir)
             trans_path = list(self._data_dir.glob("*.csv"))[0]
