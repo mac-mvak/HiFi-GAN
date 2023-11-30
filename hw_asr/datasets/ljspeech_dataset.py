@@ -64,16 +64,16 @@ class LJspeechDataset(Dataset):
         #os.remove(str(arch_path))
         shutil.rmtree(str(self._data_dir / "LJSpeech-1.1"))
 
-        files = [file_name for file_name in (self._data_dir / "wavs").iterdir()]
-        train_length = int(0.85 * len(files)) # hand split, test ~ 15% 
-        (self._data_dir / "train").mkdir(exist_ok=True, parents=True)
-        (self._data_dir / "test").mkdir(exist_ok=True, parents=True)
-        for i, fpath in enumerate((self._data_dir / "wavs").iterdir()):
-            if i < train_length:
-                shutil.move(str(fpath), str(self._data_dir / "train" / fpath.name))
-            else:
-                shutil.move(str(fpath), str(self._data_dir / "test" / fpath.name))
-        shutil.rmtree(str(self._data_dir / "wavs"))
+        #files = [file_name for file_name in (self._data_dir / "wavs").iterdir()]
+        #train_length = int(0.85 * len(files)) # hand split, test ~ 15% 
+        #(self._data_dir / "train").mkdir(exist_ok=True, parents=True)
+        #(self._data_dir / "test").mkdir(exist_ok=True, parents=True)
+        #for i, fpath in enumerate((self._data_dir / "wavs").iterdir()):
+        #    if i < train_length:
+        #        shutil.move(str(fpath), str(self._data_dir / "train" / fpath.name))
+        #    else:
+        #        shutil.move(str(fpath), str(self._data_dir / "test" / fpath.name))
+        #shutil.rmtree(str(self._data_dir / "wavs"))
 
 
     def _get_or_load_index(self):
@@ -89,7 +89,7 @@ class LJspeechDataset(Dataset):
 
     def _create_index(self):
         index = []
-        split_dir = self._data_dir / 'ljspeech'
+        split_dir = self._data_dir / 'wavs'
         if not split_dir.exists():
             self._load_dataset()
 
