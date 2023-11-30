@@ -24,23 +24,24 @@ class Trainer(BaseTrainer):
 
     def __init__(
             self,
-            model,
-            criterion,
+            gen,
+            dis,
+            loss_gen,
+            loss_dis,
             metrics,
-            optimizer,
+            optimizer_gen,
+            optimizer_dis,
             config,
             device,
             dataloaders,
-            text_encoder,
-            lr_scheduler=None,
-            lr_scheduler_name=None,
+            lr_scheduler_gen=None,
+            lr_scheduler_dis=None,
             len_epoch=None,
             skip_oom=True,
     ):
-        super().__init__(model, criterion, metrics, optimizer, config, device)
+        super().__init__(gen, dis, loss_gen, loss_dis, metrics, 
+                         optimizer_gen, optimizer_dis, config, device)
         self.skip_oom = skip_oom
-        self.text_encoder = text_encoder
-        self.lr_scheduler_name = lr_scheduler_name
         self.config = config
         self.train_dataloader = dataloaders["train"]
         if len_epoch is None:
@@ -51,7 +52,8 @@ class Trainer(BaseTrainer):
             self.train_dataloader = inf_loop(self.train_dataloader)
             self.len_epoch = len_epoch
         self.evaluation_dataloaders = {k: v for k, v in dataloaders.items() if k != "train"}
-        self.lr_scheduler = lr_scheduler
+        self.lr_scheduler_gen = lr_scheduler_gen
+        self.lr_scheduler_dis = lr_scheduler_dis
         self.log_step = 50
 
         self.train_metrics = MetricTracker(
@@ -114,12 +116,13 @@ class Trainer(BaseTrainer):
                         epoch, self._progress(batch_idx), batch["loss"].item()
                     )
                 )
-                if self.lr_scheduler_name!="ReduceLROnPlateau":
-                    lr_epoch = self.lr_scheduler.get_last_lr()[0]
-                else:
-                    lr_epoch = self.optimizer.param_groups[0]['lr']
+                lr_epoch_generator = self.lr_scheduler_gen.get_last_lr()[0]
                 self.writer.add_scalar(
-                   "learning rate", lr_epoch
+                   "learning rate generator", lr_epoch_generator
+                )
+                lr_epoch_discriminator = self.lr_scheduler_dis.get_last_lr()[0]
+                self.writer.add_scalar(
+                   "learning rate discriminator", lr_epoch_discriminator
                 )
                 self._log_predictions(**batch)
                 self._log_spectrogram(batch["spectrogram"])
@@ -131,13 +134,8 @@ class Trainer(BaseTrainer):
             if batch_idx >= self.len_epoch:
                 break
         log = last_train_metrics
-
-        for part, dataloader in self.evaluation_dataloaders.items():
-            val_log = self._evaluation_epoch(epoch, part, dataloader)
-            if  (self.lr_scheduler is not None) and (self.lr_scheduler_name=="ReduceLROnPlateau"):
-                if part == "val-other":
-                    self.lr_scheduler.step(val_log["loss"])
-            log.update(**{f"{part}_{name}": value for name, value in val_log.items()})
+        self.lr_scheduler_gen.step()
+        self.lr_scheduler_dis.step()
 
         return log
 
@@ -160,10 +158,6 @@ class Trainer(BaseTrainer):
             batch["loss"].backward()
             self._clip_grad_norm()
             self.optimizer.step()
-            if self.lr_scheduler is not None:
-                if self.lr_scheduler_name!="ReduceLROnPlateau":
-                    self.lr_scheduler.step()
-
         metrics.update("loss", batch["loss"].item())
         for met in self.metrics:
             metrics.update(met.name, met(**batch))

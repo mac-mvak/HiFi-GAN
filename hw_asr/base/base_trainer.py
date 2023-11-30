@@ -12,15 +12,18 @@ class BaseTrainer:
     Base class for all trainers
     """
 
-    def __init__(self, model: BaseModel, criterion, metrics, optimizer, config, device):
+    def __init__(self, gen, dis, loss_gen, loss_dis, metrics, optimizer_gen, optimizer_dis, config, device):
         self.device = device
         self.config = config
         self.logger = config.get_logger("trainer", config["trainer"]["verbosity"])
 
-        self.model = model
-        self.criterion = criterion
+        self.gen = gen
+        self.dis = dis
+        self.loss_gen = loss_gen
+        self.loss_dis = loss_dis
         self.metrics = metrics
-        self.optimizer = optimizer
+        self.optimizer_gen = optimizer_gen
+        self.optimizer_dis = optimizer_dis
 
         # for interrupt saving
         self._last_epoch = 0
@@ -76,7 +79,6 @@ class BaseTrainer:
         """
         Full training logic
         """
-        not_improved_count = 0
         for epoch in range(self.start_epoch, self.epochs + 1):
             self._last_epoch = epoch
             result = self._train_epoch(epoch)
@@ -91,43 +93,8 @@ class BaseTrainer:
 
             # evaluate model performance according to configured metric,
             # save best checkpoint as model_best
-            best = False
-            if self.mnt_mode != "off":
-                try:
-                    # check whether model performance improved or not,
-                    # according to specified metric(mnt_metric)
-                    if self.mnt_mode == "min":
-                        improved = log[self.mnt_metric] <= self.mnt_best
-                    elif self.mnt_mode == "max":
-                        improved = log[self.mnt_metric] >= self.mnt_best
-                    else:
-                        improved = False
-                except KeyError:
-                    self.logger.warning(
-                        "Warning: Metric '{}' is not found. "
-                        "Model performance monitoring is disabled.".format(
-                            self.mnt_metric
-                        )
-                    )
-                    self.mnt_mode = "off"
-                    improved = False
-
-                if improved:
-                    self.mnt_best = log[self.mnt_metric]
-                    not_improved_count = 0
-                    best = True
-                else:
-                    not_improved_count += 1
-
-                if not_improved_count > self.early_stop:
-                    self.logger.info(
-                        "Validation performance didn't improve for {} epochs. "
-                        "Training stops.".format(self.early_stop)
-                    )
-                    break
-
-            if epoch % self.save_period == 0 or best:
-                self._save_checkpoint(epoch, save_best=best, only_best=True)
+            if epoch % self.save_period == 0 :
+                self._save_checkpoint(epoch)
 
     def _save_checkpoint(self, epoch, save_best=False, only_best=False):
         """
@@ -136,12 +103,16 @@ class BaseTrainer:
         :param epoch: current epoch number
         :param save_best: if True, rename the saved checkpoint to 'model_best.pth'
         """
-        arch = type(self.model).__name__
+        arch_gen = type(self.gen).__name__
+        arch_dis = type(self.dis).__name__
         state = {
-            "arch": arch,
+            "arch_gen": arch_gen,
+            "arch_dis": arch_dis,
             "epoch": epoch,
-            "state_dict": self.model.state_dict(),
-            "optimizer": self.optimizer.state_dict(),
+            "state_dict_gen": self.gen.state_dict(),
+            "state_dict_dis": self.dis.state_dict(),
+            "optimizer_gen": self.optimizer_gen.state_dict(),
+            "optimizer_dis": self.optimizer_dis.state_dict(),
             "monitor_best": self.mnt_best,
             "config": self.config,
         }
@@ -167,24 +138,43 @@ class BaseTrainer:
         self.mnt_best = checkpoint["monitor_best"]
 
         # load architecture params from checkpoint.
-        if checkpoint["config"]["arch"] != self.config["arch"]:
+        if checkpoint["config"]["generator_model"] != self.config["generator_model"]:
             self.logger.warning(
                 "Warning: Architecture configuration given in config file is different from that "
                 "of checkpoint. This may yield an exception while state_dict is being loaded."
             )
-        self.model.load_state_dict(checkpoint["state_dict"])
+        self.gen.load_state_dict(checkpoint["state_dict_gen"])
+
+        if checkpoint["config"]["discriminator_model"] != self.config["discriminator_model"]:
+            self.logger.warning(
+                "Warning: Architecture of a discriminator in a"
+                "  configuration given in config file is different from that "
+                "of checkpoint. This may yield an exception while state_dict is being loaded."
+            )
+        self.dis.load_state_dict(checkpoint["state_dict_dis"])
 
         # load optimizer state from checkpoint only when optimizer type is not changed.
         if (
-                checkpoint["config"]["optimizer"] != self.config["optimizer"] or
-                checkpoint["config"]["lr_scheduler"] != self.config["lr_scheduler"]
+                checkpoint["config"]["optimizer_generator"] != self.config["optimizer_generator"] or
+                checkpoint["config"]["lr_scheduler_generator"] != self.config["lr_scheduler_generator"]
         ):
             self.logger.warning(
-                "Warning: Optimizer or lr_scheduler given in config file is different "
+                "Warning: Optimizer or lr_scheduler of a generator given in config file is different "
                 "from that of checkpoint. Optimizer parameters not being resumed."
             )
         else:
-            self.optimizer.load_state_dict(checkpoint["optimizer"])
+            self.optimizer_gen.load_state_dict(checkpoint["optimizer_gen"])
+
+        if (
+                checkpoint["config"]["optimizer_discriminator"] != self.config["optimizer_discriminator"] or
+                checkpoint["config"]["lr_scheduler_discriminator"] != self.config["lr_scheduler_discriminator"]
+        ):
+            self.logger.warning(
+                "Warning: Optimizer or lr_scheduler of a discriminator given in config file is different "
+                "from that of checkpoint. Optimizer parameters not being resumed."
+            )
+        else:
+            self.optimizer_dis.load_state_dict(checkpoint["optimizer_dis"])
 
         self.logger.info(
             "Checkpoint loaded. Resume training from epoch {}".format(self.start_epoch)
