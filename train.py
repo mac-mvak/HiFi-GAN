@@ -16,7 +16,7 @@ from hw_hifi.utils.parse_config import ConfigParser
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # fix random seeds for reproducibility
-SEED = 123
+SEED = 1233
 torch.manual_seed(SEED)
 torch.backends.cudnn.deterministic = False
 torch.backends.cudnn.benchmark = True

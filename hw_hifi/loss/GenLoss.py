@@ -52,7 +52,7 @@ class GeneratorLoss(nn.Module):
         mel_loss = self.mel_loss(**batch)
         fm_loss = self.fm_loss(**batch)
         gan_loss = self.gan_loss(**batch)
-        loss = mel_loss + self.la_fm * fm_loss + self.la_mel * gan_loss
+        loss =  self.la_mel * mel_loss + self.la_fm * fm_loss +  gan_loss
         return {
             "loss": loss,
             "mel_loss": mel_loss.detach(),
