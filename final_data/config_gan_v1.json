@@ -96,6 +96,7 @@
         "early_stop": 100,
         "visualize": "wandb",
         "len_epoch": 500,
-        "wandb_project": "Hi-Fi Project"
+        "wandb_project": "Hi-Fi Project",
+        "wandb_name": "Hi-Fi GANv1"
     }
 }
