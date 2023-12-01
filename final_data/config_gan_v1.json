@@ -14,7 +14,7 @@
     "generator_model":{
         "type": "Generator",
         "args": {
-            "h_u": 128,
+            "h_u": 512,
             "k_u": [16, 16, 4, 4],
             "k_r": [3, 7, 11],
             "D_rs": [[[1, 1], [3, 1], [5,1]],
@@ -34,13 +34,13 @@
     },
     "data": {
         "train": {
-            "batch_size": 20,
+            "batch_size": 10,
             "num_workers": 5,
             "datasets": [
                 {
                     "type": "LJspeechDataset",
                     "args": {
-                        "crop_len": 8192
+                        "crop_len": 16384
                     }
                 }
             ]
@@ -90,13 +90,13 @@
     "trainer": {
         "epochs": 4000,
         "save_dir": "saved/",
-        "save_period": 5,
+        "save_period": 100,
         "verbosity": 2,
         "monitor": "min val_loss",
         "early_stop": 100,
         "visualize": "wandb",
         "len_epoch": 500,
         "wandb_project": "Hi-Fi Project",
-        "wandb_name": "Hi-Fi GANv2"
+        "wandb_name": "OneBatchTest"
     }
 }

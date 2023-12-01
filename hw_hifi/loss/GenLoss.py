@@ -10,7 +10,7 @@ class MelLoss(nn.Module):
         self.loss = nn.L1Loss()
 
     def forward(self, mel_spectrogram, predicted_audios, **kwargs):
-        pred_specs = self.mel_spec(predicted_audios)
+        pred_specs = self.mel_spec(predicted_audios.squeeze(1))
         return self.loss(mel_spectrogram, pred_specs)
     
 

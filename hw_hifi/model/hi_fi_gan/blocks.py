@@ -36,9 +36,9 @@ class ResBlock(nn.Module):
             )
     
     def forward(self, x):
-        out = x
+        out = 0
         for block in self.conv_blocks:
-            conv_out = block(out)
+            conv_out = block(x)
             out = conv_out + out
         return out
     
@@ -64,7 +64,7 @@ class MRF(nn.Module):
                 out = res_out
             else:
                 out = out + res_out
-        out = out/self.n_c
+        #out = out/self.n_c
         return out
     
     def remove_weight_norm(self):
@@ -78,14 +78,14 @@ class PeriodDiscriminator(nn.Module):
         self.period = period
         norm_f = spectral_norm if use_spectral_norm else weight_norm
         self.convs = nn.ModuleList([
-            norm_f(nn.Conv2d(1, 2**5, (5, 1), (3, 1), padding=(2, 0))),
-            norm_f(nn.Conv2d(2**5, 2**7, (5, 1), (3, 1), padding=(2, 0))),
-            norm_f(nn.Conv2d(2**7, 2**9, (5, 1), (3, 1), padding=(2, 0))),
-            norm_f(nn.Conv2d(2**9, 2**10, (5, 1), (3, 1), padding=(2, 0))),
-            norm_f(nn.Conv2d(2**10, 2**10, (5, 1), 1, padding=(2, 0)))
+            nn.Conv2d(1, 2**5, (5, 1), (3, 1), padding=(2, 0)),
+            nn.Conv2d(2**5, 2**7, (5, 1), (3, 1), padding=(2, 0)),
+            nn.Conv2d(2**7, 2**9, (5, 1), (3, 1), padding=(2, 0)),
+            nn.Conv2d(2**9, 2**10, (5, 1), (3, 1), padding=(2, 0)),
+            nn.Conv2d(2**10, 2**10, (5, 1), 1, padding=(2, 0))
         ]
         )
-        self.final_conv = norm_f(nn.Conv2d(1024, 1, (3, 1), 1, padding=(1, 0)))
+        self.final_conv = nn.Conv2d(1024, 1, (3, 1), 1, padding=(1, 0))
         self.lrelu = nn.LeakyReLU(lrelu_slope)
 
     def forward(self, x):
@@ -113,16 +113,16 @@ class ScaleDiscriminator(nn.Module):
         super().__init__()
         norm_f = spectral_norm if use_spectral_norm else weight_norm
         self.convs = nn.ModuleList([
-            norm_f(nn.Conv1d(1, 128, 15, 1, padding=7)),
-            norm_f(nn.Conv1d(128, 128, 41, 2, groups=4, padding=20)),
-            norm_f(nn.Conv1d(128, 256, 41, 2, groups=16, padding=20)),
-            norm_f(nn.Conv1d(256, 512, 41, 4, groups=16, padding=20)),
-            norm_f(nn.Conv1d(512, 1024, 41, 4, groups=16, padding=20)),
-            norm_f(nn.Conv1d(1024, 1024, 41, 1, groups=16, padding=20)),
-            norm_f(nn.Conv1d(1024, 1024, 5, 1, padding=2)),
+            nn.Conv1d(1, 128, 15, 1, padding=7),
+            nn.Conv1d(128, 128, 41, 2, groups=4, padding=20),
+            nn.Conv1d(128, 256, 41, 2, groups=16, padding=20),
+            nn.Conv1d(256, 512, 41, 4, groups=16, padding=20),
+            nn.Conv1d(512, 1024, 41, 4, groups=16, padding=20),
+            nn.Conv1d(1024, 1024, 41, 1, groups=16, padding=20),
+            nn.Conv1d(1024, 1024, 5, 1, padding=2),
         ]
         )
-        self.final_conv = norm_f(nn.Conv1d(1024, 1, 3, 1, padding=1))
+        self.final_conv = nn.Conv1d(1024, 1, 3, 1, padding=1)
         self.lrelu = nn.LeakyReLU(lrelu_slope)
 
     def forward(self, x):
@@ -153,8 +153,8 @@ class MPD(nn.Module):
             y_d_pred, layer_pred = disc(y_pred)
             y_ds_true.append(y_d_true)
             y_ds_pred.append(y_d_pred)
-            layers_true += layer_true
-            layers_pred += layer_pred
+            layers_true = layers_true + layer_true
+            layers_pred = layers_pred + layer_pred
         return y_ds_true, y_ds_pred, layer_true, layer_pred
 
 class MSD(nn.Module):
@@ -180,6 +180,6 @@ class MSD(nn.Module):
             y_d_pred, layer_pred = disc(y_pred)
             y_ds_true.append(y_d_true)
             y_ds_pred.append(y_d_pred)
-            layers_true += layer_true
-            layers_pred += layer_pred
+            layers_true = layers_true + layer_true
+            layers_pred = layers_pred + layer_pred
         return y_ds_true, y_ds_pred, layer_true, layer_pred
