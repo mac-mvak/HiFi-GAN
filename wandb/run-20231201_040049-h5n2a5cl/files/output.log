@@ -1,0 +1,135 @@
+
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.61s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+    epoch          : 1
+    mel_loss       : 1.72818124294281
+    fm_loss        : 0.05624302849173546
+    gan_loss       : 6.1461076736450195
+    loss           : 278.41552734375
+    discriminator loss: 7.964967727661133
+    grad norm dis  : 8.106110572814941
+    grad norm gen  : 10.101363182067871
+
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.28s/it]
+    epoch          : 2
+    mel_loss       : 1.5617954730987549
+    fm_loss        : 0.07307767868041992
+    gan_loss       : 1.5797836780548096
+    loss           : 72.7982177734375
+    discriminator loss: 4.705050468444824
+    grad norm dis  : 4.813537120819092
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.32s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+Train Epoch: 3 [0/2 (0%)] G_Loss: 85.650406 D_Loss: 4.516795
+    epoch          : 3
+    mel_loss       : 1.633458137512207
+    fm_loss        : 0.08813308924436569
+    gan_loss       : 1.863126277923584
+    loss           : 85.65040588378906
+    discriminator loss: 4.516794681549072
+    grad norm dis  : 8.707738876342773
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.41s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.33s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+    epoch          : 4
+    mel_loss       : 1.5033305883407593
+    fm_loss        : 0.09783512353897095
+    gan_loss       : 3.049384593963623
+    loss           : 138.9213104248047
+    discriminator loss: 4.055783271789551
+    grad norm dis  : 2.80521821975708
+    grad norm gen  : 134.11062622070312
+Train Epoch: 5 [0/2 (0%)] G_Loss: 102.945068 D_Loss: 4.132539
+    epoch          : 5
+    mel_loss       : 1.8754346370697021
+    fm_loss        : 0.07651664316654205
+    gan_loss       : 2.242591142654419
+    loss           : 102.945068359375
+    discriminator loss: 4.132538795471191
+    grad norm dis  : 2.611274003982544
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.41s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.44s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+    epoch          : 6
+    mel_loss       : 2.129976749420166
+    fm_loss        : 0.2297101765871048
+    gan_loss       : 1.7553530931472778
+    loss           : 81.58028411865234
+    discriminator loss: 4.699071407318115
+    grad norm dis  : 4.973047256469727
+    grad norm gen  : 249.9722900390625
+
+train:  50%|███████████████████████████████████████████████████████                                                       | 1/2 [00:03<00:03,  3.49s/it]
+    epoch          : 7
+    mel_loss       : 2.78558611869812
+    fm_loss        : 0.5471687912940979
+    gan_loss       : 3.093221664428711
+    loss           : 143.0749053955078
+    discriminator loss: 5.06744909286499
+    grad norm dis  : 5.387751579284668
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.34s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.43s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+    epoch          : 8
+    mel_loss       : 2.375072956085205
+    fm_loss        : 1.617663860321045
+    gan_loss       : 6.219806671142578
+    loss           : 285.501708984375
+    discriminator loss: 3.8996999263763428
+    grad norm dis  : 6.599061489105225
+    grad norm gen  : 564.3897705078125
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.40s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+    epoch          : 9
+    mel_loss       : 2.510267734527588
+    fm_loss        : 3.0684211254119873
+    gan_loss       : 7.462894439697266
+    loss           : 344.47735595703125
+    discriminator loss: 2.152414083480835
+    grad norm dis  : 6.989842891693115
+    grad norm gen  : 3331.37353515625
+Train Epoch: 10 [0/2 (0%)] G_Loss: 383.181152 D_Loss: 2.517249
+    epoch          : 10
+    mel_loss       : 2.6738758087158203
+    fm_loss        : 2.4947526454925537
+    gan_loss       : 8.344839096069336
+    loss           : 383.18115234375
+    discriminator loss: 2.51724910736084
+    grad norm dis  : 17.245128631591797
+train: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:06<00:00,  3.38s/it]
+train:   0%|                                                                                                                      | 0/2 [00:00<?, ?it/s]
+Train Epoch: 11 [0/2 (0%)] G_Loss: 296.865295 D_Loss: 3.539829
+Saving model on keyboard interrupt
+train:  50%|███████████████████████████████████████████████████████                                                       | 1/2 [00:05<00:05,  5.17s/it]
+Traceback (most recent call last):
+  File "/home/mac-mvak/code_disk/HiFi-GAN/train.py", line 113, in <module>
+    main(config)
+  File "/home/mac-mvak/code_disk/HiFi-GAN/train.py", line 77, in main
+    trainer.train()
+  File "/home/mac-mvak/code_disk/HiFi-GAN/hw_hifi/base/base_trainer.py", line 76, in train
+    raise e
+  File "/home/mac-mvak/code_disk/HiFi-GAN/hw_hifi/base/base_trainer.py", line 72, in train
+    self._train_process()
+  File "/home/mac-mvak/code_disk/HiFi-GAN/hw_hifi/base/base_trainer.py", line 84, in _train_process
+    result = self._train_epoch(epoch)
+  File "/home/mac-mvak/code_disk/HiFi-GAN/hw_hifi/trainer/trainer.py", line 107, in _train_epoch
+    batch = self.process_batch(
+  File "/home/mac-mvak/code_disk/HiFi-GAN/hw_hifi/trainer/trainer.py", line 173, in process_batch
+    self.optimizer_dis.step()
+  File "/home/mac-mvak/code_disk/HiFi-GAN/.venv/lib/python3.9/site-packages/torch/optim/lr_scheduler.py", line 68, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/mac-mvak/code_disk/HiFi-GAN/.venv/lib/python3.9/site-packages/torch/optim/optimizer.py", line 140, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/mac-mvak/code_disk/HiFi-GAN/.venv/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/mac-mvak/code_disk/HiFi-GAN/.venv/lib/python3.9/site-packages/torch/optim/adamw.py", line 162, in step
+    adamw(params_with_grad,
+  File "/home/mac-mvak/code_disk/HiFi-GAN/.venv/lib/python3.9/site-packages/torch/optim/adamw.py", line 219, in adamw
+    func(params,
+  File "/home/mac-mvak/code_disk/HiFi-GAN/.venv/lib/python3.9/site-packages/torch/optim/adamw.py", line 316, in _single_tensor_adamw
+    denom = (exp_avg_sq.sqrt() / bias_correction2_sqrt).add_(eps)
+KeyboardInterrupt

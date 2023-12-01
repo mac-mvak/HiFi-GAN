@@ -2,18 +2,18 @@ import argparse
 import json
 import os
 from pathlib import Path
-from hw_asr.metric.utils import calc_cer, calc_wer
-from hw_asr.utils import MetricTracker
+from hw_hifi.metric.utils import calc_cer, calc_wer
+from hw_hifi.utils import MetricTracker
 
 
 import torch
 from tqdm import tqdm
 
-import hw_asr.model as module_model
-from hw_asr.trainer import Trainer
-from hw_asr.utils import ROOT_PATH
-from hw_asr.utils.object_loading import get_dataloaders
-from hw_asr.utils.parse_config import ConfigParser
+import hw_hifi.model as module_model
+from hw_hifi.trainer import Trainer
+from hw_hifi.utils import ROOT_PATH
+from hw_hifi.utils.object_loading import get_dataloaders
+from hw_hifi.utils.parse_config import ConfigParser
 
 DEFAULT_CHECKPOINT_PATH = ROOT_PATH / "default_test_model" / "checkpoint.pth"
 

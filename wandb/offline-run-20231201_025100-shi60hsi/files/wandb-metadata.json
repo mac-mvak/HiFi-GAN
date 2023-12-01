@@ -1,0 +1,88 @@
+{
+    "os": "Linux-6.2.0-37-generic-x86_64-with-glibc2.35",
+    "python": "3.9.18",
+    "heartbeatAt": "2023-11-30T23:51:00.390708",
+    "startedAt": "2023-11-30T23:51:00.226206",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/mac-mvak/code_disk/HiFi-GAN/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "git@github.com:mac-mvak/HiFi-GAN.git",
+        "commit": "cafce290d778e9458d12a615c1ffd2433257cf33"
+    },
+    "email": "maximusev1290@gmail.com",
+    "root": "/home/mac-mvak/code_disk/HiFi-GAN",
+    "host": "macmvak-MS-7A59",
+    "username": "mac-mvak",
+    "executable": "/home/mac-mvak/code_disk/HiFi-GAN/.venv/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 4500.015875,
+        "min": 800.0,
+        "max": 4500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4499.924,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4510.791,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4500.096,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4500.037,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4499.847,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4500.121,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4500.02,
+            "min": 800.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4499.89,
+            "min": 800.0,
+            "max": 4500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 211.95973587036133,
+            "used": 87.35498046875
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1070",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 15.56704330444336
+    }
+}

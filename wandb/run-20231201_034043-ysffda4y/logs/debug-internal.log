@@ -1,0 +1,484 @@
+2023-12-01 03:40:43,458 INFO    StreamThr :65784 [internal.py:wandb_internal():86] W&B internal server running at pid: 65784, started at: 2023-12-01 03:40:43.458275
+2023-12-01 03:40:43,459 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status
+2023-12-01 03:40:43,463 INFO    WriterThread:65784 [datastore.py:open_for_write():85] open: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/run-ysffda4y.wandb
+2023-12-01 03:40:43,463 DEBUG   SenderThread:65784 [sender.py:send():380] send: header
+2023-12-01 03:40:43,509 DEBUG   SenderThread:65784 [sender.py:send():380] send: run
+2023-12-01 03:40:44,060 INFO    SenderThread:65784 [dir_watcher.py:__init__():211] watching files in: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files
+2023-12-01 03:40:44,060 INFO    SenderThread:65784 [sender.py:_start_run_threads():1124] run started: ysffda4y with start time 1701391243.458251
+2023-12-01 03:40:44,066 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: check_version
+2023-12-01 03:40:44,066 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: check_version
+2023-12-01 03:40:44,312 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: run_start
+2023-12-01 03:40:44,319 DEBUG   HandlerThread:65784 [system_info.py:__init__():32] System info init
+2023-12-01 03:40:44,319 DEBUG   HandlerThread:65784 [system_info.py:__init__():47] System info init done
+2023-12-01 03:40:44,319 INFO    HandlerThread:65784 [system_monitor.py:start():194] Starting system monitor
+2023-12-01 03:40:44,319 INFO    SystemMonitor:65784 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-12-01 03:40:44,320 INFO    HandlerThread:65784 [system_monitor.py:probe():214] Collecting system info
+2023-12-01 03:40:44,320 INFO    SystemMonitor:65784 [interfaces.py:start():190] Started cpu monitoring
+2023-12-01 03:40:44,321 INFO    SystemMonitor:65784 [interfaces.py:start():190] Started disk monitoring
+2023-12-01 03:40:44,321 INFO    SystemMonitor:65784 [interfaces.py:start():190] Started gpu monitoring
+2023-12-01 03:40:44,321 INFO    SystemMonitor:65784 [interfaces.py:start():190] Started memory monitoring
+2023-12-01 03:40:44,322 INFO    SystemMonitor:65784 [interfaces.py:start():190] Started network monitoring
+2023-12-01 03:40:44,333 DEBUG   HandlerThread:65784 [system_info.py:probe():196] Probing system
+2023-12-01 03:40:44,338 DEBUG   HandlerThread:65784 [system_info.py:_probe_git():181] Probing git
+2023-12-01 03:40:44,348 DEBUG   HandlerThread:65784 [system_info.py:_probe_git():189] Probing git done
+2023-12-01 03:40:44,348 DEBUG   HandlerThread:65784 [system_info.py:probe():244] Probing system done
+2023-12-01 03:40:44,348 DEBUG   HandlerThread:65784 [system_monitor.py:probe():223] {'os': 'Linux-6.2.0-37-generic-x86_64-with-glibc2.35', 'python': '3.9.18', 'heartbeatAt': '2023-12-01T00:40:44.333399', 'startedAt': '2023-12-01T00:40:43.454793', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/mac-mvak/code_disk/HiFi-GAN/train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'git': {'remote': 'git@github.com:mac-mvak/HiFi-GAN.git', 'commit': 'cafce290d778e9458d12a615c1ffd2433257cf33'}, 'email': 'maximusev1290@gmail.com', 'root': '/home/mac-mvak/code_disk/HiFi-GAN', 'host': 'macmvak-MS-7A59', 'username': 'mac-mvak', 'executable': '/home/mac-mvak/code_disk/HiFi-GAN/.venv/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 4500.5545, 'min': 800.0, 'max': 4500.0}, 'cpu_freq_per_core': [{'current': 4501.171, 'min': 800.0, 'max': 4500.0}, {'current': 4499.99, 'min': 800.0, 'max': 4500.0}, {'current': 4499.614, 'min': 800.0, 'max': 4500.0}, {'current': 4499.536, 'min': 800.0, 'max': 4500.0}, {'current': 4499.879, 'min': 800.0, 'max': 4500.0}, {'current': 4500.182, 'min': 800.0, 'max': 4500.0}, {'current': 4500.071, 'min': 800.0, 'max': 4500.0}, {'current': 4500.018, 'min': 800.0, 'max': 4500.0}], 'disk': {'/': {'total': 211.95973587036133, 'used': 87.35960006713867}}, 'gpu': 'NVIDIA GeForce GTX 1070', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1070', 'memory_total': 8589934592}], 'memory': {'total': 15.56704330444336}}
+2023-12-01 03:40:44,348 INFO    HandlerThread:65784 [system_monitor.py:probe():224] Finished collecting system info
+2023-12-01 03:40:44,348 INFO    HandlerThread:65784 [system_monitor.py:probe():227] Publishing system info
+2023-12-01 03:40:44,348 DEBUG   HandlerThread:65784 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-12-01 03:40:44,348 DEBUG   HandlerThread:65784 [system_info.py:_save_pip():68] Saving pip packages done
+2023-12-01 03:40:44,349 INFO    HandlerThread:65784 [system_monitor.py:probe():229] Finished publishing system info
+2023-12-01 03:40:44,352 DEBUG   SenderThread:65784 [sender.py:send():380] send: files
+2023-12-01 03:40:44,352 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-metadata.json with policy now
+2023-12-01 03:40:44,355 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:40:44,356 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:40:44,361 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:44,361 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:40:44,639 DEBUG   SenderThread:65784 [sender.py:send():380] send: telemetry
+2023-12-01 03:40:45,017 INFO    wandb-upload_0:65784 [upload_job.py:push():131] Uploaded file /tmp/tmpr29shu5rwandb/0833qm7j-wandb-metadata.json
+2023-12-01 03:40:45,061 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-metadata.json
+2023-12-01 03:40:45,061 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/requirements.txt
+2023-12-01 03:40:45,061 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,984 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:45,985 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:47,060 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:48,061 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:49,061 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:49,270 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:40:51,061 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:53,062 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:54,966 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:40:55,062 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:56,286 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,062 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:57,454 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,456 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,456 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,456 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,456 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,456 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:40:57,456 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:40:57,456 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:40:57,456 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:40:58,063 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:58,063 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_created():271] file/dir created: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:40:59,063 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:40:59,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:40:59,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:40:59,356 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:41:00,744 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:01,063 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:03,064 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:05,064 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:06,439 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:07,065 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:07,749 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,932 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,932 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,932 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:41:08,933 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,933 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:41:08,933 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,933 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,933 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,933 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,934 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,934 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,934 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:08,934 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:41:09,065 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:41:09,065 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:10,066 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:11,066 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:12,209 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:13,066 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:14,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:41:14,356 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:41:14,358 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:41:15,067 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:17,067 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:17,912 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:19,067 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/config.yaml
+2023-12-01 03:41:19,068 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:19,225 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,068 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:20,393 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,393 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,394 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:41:20,394 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,394 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:41:20,394 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,394 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,394 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,394 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,394 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,394 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,395 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:20,395 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:41:21,068 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:41:21,068 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:22,068 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:23,068 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:23,670 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:25,069 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:27,069 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:29,070 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:29,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:41:29,356 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:41:29,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:41:29,565 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:30,742 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,070 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:31,898 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,899 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,899 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,899 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,899 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,899 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,899 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:41:31,900 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,900 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:41:31,900 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,900 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,900 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:31,900 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:41:32,070 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:41:32,070 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:33,070 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:34,071 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:35,071 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:35,329 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:37,071 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:39,072 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:41,072 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:41,285 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:42,668 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,073 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:43,838 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,838 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,839 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:41:43,839 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,839 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:41:43,839 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,839 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,839 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,840 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,840 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:41:43,840 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,840 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:43,840 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:44,073 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:41:44,073 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:44,322 DEBUG   SystemMonitor:65784 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-12-01 03:41:44,325 DEBUG   SenderThread:65784 [sender.py:send():380] send: stats
+2023-12-01 03:41:44,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:41:44,356 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:41:44,358 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:41:45,073 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:46,074 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:47,074 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:47,214 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:49,074 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:51,075 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:52,971 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:53,075 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:54,286 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,076 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:55,454 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,454 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:41:55,454 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,455 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:41:55,456 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:41:56,076 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:41:56,076 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:57,076 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:58,734 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:41:59,076 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:41:59,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:41:59,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:41:59,356 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:42:01,077 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:03,077 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:04,434 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:05,078 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:05,747 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,916 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,916 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:42:06,917 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,917 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:42:06,917 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,917 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,917 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,917 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,917 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,918 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,918 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,918 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:06,918 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:07,078 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:42:07,079 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:08,079 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:09,079 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:10,206 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:11,079 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:13,080 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:14,323 DEBUG   SenderThread:65784 [sender.py:send():380] send: stats
+2023-12-01 03:42:14,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:42:14,356 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:42:14,358 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:42:15,080 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:15,901 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:17,080 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:17,208 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,081 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:18,391 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,392 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,392 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,392 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,392 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,392 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,392 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,392 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:42:18,392 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:42:18,392 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,393 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,393 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:18,393 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:19,081 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:42:19,081 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:20,081 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:21,081 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:21,669 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:23,082 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:25,082 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:27,083 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:27,362 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:28,748 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:29,083 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:29,357 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:42:29,357 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:42:29,359 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:42:30,019 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,020 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:42:30,020 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:42:30,020 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:30,062 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,062 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,062 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,062 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,062 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,062 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,063 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,063 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,063 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:30,083 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:42:31,084 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:32,460 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:33,084 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:35,085 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:37,085 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:38,353 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:39,086 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:41,001 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:41,086 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:42,238 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,239 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,239 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,239 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,239 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:42:42,239 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,239 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:42:42,239 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,240 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,240 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,240 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,240 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:42,240 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:43,087 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:42:43,087 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:43,398 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:44,326 DEBUG   SenderThread:65784 [sender.py:send():380] send: stats
+2023-12-01 03:42:44,356 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: stop_status
+2023-12-01 03:42:44,357 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: stop_status
+2023-12-01 03:42:44,357 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:42:45,087 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:47,088 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:49,088 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:49,159 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:51,089 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:52,938 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:53,089 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:54,170 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,171 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,171 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,171 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,171 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,172 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,172 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:42:54,172 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,172 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:42:54,172 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,172 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,172 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: partial_history
+2023-12-01 03:42:54,173 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:54,173 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:55,090 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:42:55,090 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:55,713 DEBUG   SenderThread:65784 [sender.py:send():380] send: exit
+2023-12-01 03:42:55,713 INFO    SenderThread:65784 [sender.py:send_exit():585] handling exit code: 255
+2023-12-01 03:42:55,714 INFO    SenderThread:65784 [sender.py:send_exit():587] handling runtime: 131
+2023-12-01 03:42:55,715 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:55,715 INFO    SenderThread:65784 [sender.py:send_exit():593] send defer
+2023-12-01 03:42:55,715 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,715 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 0
+2023-12-01 03:42:55,715 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,715 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-12-01 03:42:55,715 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 1
+2023-12-01 03:42:55,715 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,715 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 1
+2023-12-01 03:42:55,715 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,716 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-12-01 03:42:55,716 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 2
+2023-12-01 03:42:55,716 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,716 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 2
+2023-12-01 03:42:55,716 INFO    HandlerThread:65784 [system_monitor.py:finish():203] Stopping system monitor
+2023-12-01 03:42:55,716 DEBUG   SystemMonitor:65784 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-12-01 03:42:55,716 DEBUG   SystemMonitor:65784 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-12-01 03:42:55,717 INFO    HandlerThread:65784 [interfaces.py:finish():202] Joined cpu monitor
+2023-12-01 03:42:55,717 INFO    HandlerThread:65784 [interfaces.py:finish():202] Joined disk monitor
+2023-12-01 03:42:55,765 INFO    HandlerThread:65784 [interfaces.py:finish():202] Joined gpu monitor
+2023-12-01 03:42:55,765 INFO    HandlerThread:65784 [interfaces.py:finish():202] Joined memory monitor
+2023-12-01 03:42:55,765 INFO    HandlerThread:65784 [interfaces.py:finish():202] Joined network monitor
+2023-12-01 03:42:55,766 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,766 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-12-01 03:42:55,766 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 3
+2023-12-01 03:42:55,766 DEBUG   SenderThread:65784 [sender.py:send():380] send: stats
+2023-12-01 03:42:55,766 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,766 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 3
+2023-12-01 03:42:55,766 DEBUG   SenderThread:65784 [sender.py:send():380] send: history
+2023-12-01 03:42:55,767 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: summary_record
+2023-12-01 03:42:55,783 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:55,783 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,783 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-12-01 03:42:55,783 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 4
+2023-12-01 03:42:55,784 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,784 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 4
+2023-12-01 03:42:55,784 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,784 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-12-01 03:42:55,784 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 5
+2023-12-01 03:42:55,784 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,784 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 5
+2023-12-01 03:42:55,784 DEBUG   SenderThread:65784 [sender.py:send():380] send: summary
+2023-12-01 03:42:55,790 INFO    SenderThread:65784 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-12-01 03:42:55,790 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,790 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-12-01 03:42:55,790 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 6
+2023-12-01 03:42:55,790 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,790 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 6
+2023-12-01 03:42:55,790 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,790 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-12-01 03:42:55,790 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 7
+2023-12-01 03:42:55,790 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: status_report
+2023-12-01 03:42:55,790 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:55,790 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 7
+2023-12-01 03:42:55,791 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:55,791 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-12-01 03:42:56,090 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:42:56,714 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-01 03:42:57,090 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:58,117 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 8
+2023-12-01 03:42:58,117 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: poll_exit
+2023-12-01 03:42:58,117 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:58,117 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 8
+2023-12-01 03:42:58,117 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:58,118 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-12-01 03:42:58,118 INFO    SenderThread:65784 [job_builder.py:build():298] Attempting to build job artifact
+2023-12-01 03:42:58,118 INFO    SenderThread:65784 [job_builder.py:_get_source_type():428] is repo sourced job
+2023-12-01 03:42:58,134 INFO    SenderThread:65784 [job_builder.py:build():404] adding wandb-job metadata file
+2023-12-01 03:42:58,143 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 9
+2023-12-01 03:42:58,143 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:58,143 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 9
+2023-12-01 03:42:58,143 DEBUG   SenderThread:65784 [sender.py:send():380] send: artifact
+2023-12-01 03:42:59,043 INFO    SenderThread:65784 [sender.py:send_artifact():1458] sent artifact job-git_github.com_mac-mvak_HiFi-GAN.git_train.py - {'id': 'QXJ0aWZhY3Q6NjU0MDY4NzY4', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMDAyMTIwMg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjU0MDY4NzY4', 'versionIndex': 0}}}
+2023-12-01 03:42:59,044 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:59,044 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-12-01 03:42:59,044 INFO    SenderThread:65784 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-12-01 03:42:59,091 INFO    Thread-12 :65784 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:59,091 INFO    SenderThread:65784 [dir_watcher.py:finish():388] scan: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files
+2023-12-01 03:42:59,091 INFO    SenderThread:65784 [dir_watcher.py:finish():402] scan save: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/requirements.txt requirements.txt
+2023-12-01 03:42:59,091 INFO    SenderThread:65784 [dir_watcher.py:finish():402] scan save: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/config.yaml config.yaml
+2023-12-01 03:42:59,091 INFO    SenderThread:65784 [dir_watcher.py:finish():402] scan save: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json wandb-summary.json
+2023-12-01 03:42:59,091 INFO    SenderThread:65784 [dir_watcher.py:finish():402] scan save: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-metadata.json wandb-metadata.json
+2023-12-01 03:42:59,091 INFO    SenderThread:65784 [dir_watcher.py:finish():402] scan save: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log output.log
+2023-12-01 03:42:59,093 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 10
+2023-12-01 03:42:59,096 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:59,097 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 10
+2023-12-01 03:42:59,099 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:59,099 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-12-01 03:42:59,099 INFO    SenderThread:65784 [file_pusher.py:finish():175] shutting down file pusher
+2023-12-01 03:42:59,520 INFO    wandb-upload_1:65784 [upload_job.py:push():131] Uploaded file /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/config.yaml
+2023-12-01 03:42:59,600 INFO    wandb-upload_2:65784 [upload_job.py:push():131] Uploaded file /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/wandb-summary.json
+2023-12-01 03:42:59,759 INFO    wandb-upload_0:65784 [upload_job.py:push():131] Uploaded file /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/requirements.txt
+2023-12-01 03:42:59,766 INFO    wandb-upload_3:65784 [upload_job.py:push():131] Uploaded file /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/files/output.log
+2023-12-01 03:42:59,966 INFO    Thread-11 :65784 [sender.py:transition_state():613] send defer: 11
+2023-12-01 03:42:59,967 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:59,967 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 11
+2023-12-01 03:42:59,967 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:59,967 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-12-01 03:42:59,967 INFO    SenderThread:65784 [file_pusher.py:join():181] waiting for file pusher
+2023-12-01 03:42:59,967 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 12
+2023-12-01 03:42:59,967 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:42:59,967 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 12
+2023-12-01 03:42:59,967 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:42:59,967 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-12-01 03:42:59,967 INFO    SenderThread:65784 [file_stream.py:finish():595] file stream finish called
+2023-12-01 03:43:00,695 INFO    SenderThread:65784 [file_stream.py:finish():599] file stream finish is done
+2023-12-01 03:43:00,695 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 13
+2023-12-01 03:43:00,696 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:43:00,696 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 13
+2023-12-01 03:43:00,696 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:43:00,696 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-12-01 03:43:00,696 INFO    SenderThread:65784 [sender.py:transition_state():613] send defer: 14
+2023-12-01 03:43:00,696 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: defer
+2023-12-01 03:43:00,696 INFO    HandlerThread:65784 [handler.py:handle_request_defer():172] handle defer: 14
+2023-12-01 03:43:00,696 DEBUG   SenderThread:65784 [sender.py:send():380] send: final
+2023-12-01 03:43:00,696 DEBUG   SenderThread:65784 [sender.py:send():380] send: footer
+2023-12-01 03:43:00,696 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: defer
+2023-12-01 03:43:00,696 INFO    SenderThread:65784 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-12-01 03:43:00,697 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: poll_exit
+2023-12-01 03:43:00,697 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: poll_exit
+2023-12-01 03:43:00,697 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: server_info
+2023-12-01 03:43:00,698 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: server_info
+2023-12-01 03:43:00,698 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: get_summary
+2023-12-01 03:43:00,701 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: sampled_history
+2023-12-01 03:43:00,701 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: internal_messages
+2023-12-01 03:43:00,701 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: job_info
+2023-12-01 03:43:00,860 DEBUG   SenderThread:65784 [sender.py:send_request():407] send_request: job_info
+2023-12-01 03:43:00,860 INFO    MainThread:65784 [wandb_run.py:_footer_history_summary_info():3760] rendering history
+2023-12-01 03:43:00,860 INFO    MainThread:65784 [wandb_run.py:_footer_history_summary_info():3792] rendering summary
+2023-12-01 03:43:00,860 INFO    MainThread:65784 [wandb_run.py:_footer_sync_info():3719] logging synced files
+2023-12-01 03:43:00,860 DEBUG   HandlerThread:65784 [handler.py:handle_request():146] handle_request: shutdown
+2023-12-01 03:43:00,861 INFO    HandlerThread:65784 [handler.py:finish():866] shutting down handler
+2023-12-01 03:43:01,702 INFO    WriterThread:65784 [datastore.py:close():294] close: /home/mac-mvak/code_disk/HiFi-GAN/wandb/run-20231201_034043-ysffda4y/run-ysffda4y.wandb
+2023-12-01 03:43:01,860 INFO    SenderThread:65784 [sender.py:finish():1536] shutting down sender
+2023-12-01 03:43:01,860 INFO    SenderThread:65784 [file_pusher.py:finish():175] shutting down file pusher
+2023-12-01 03:43:01,860 INFO    SenderThread:65784 [file_pusher.py:join():181] waiting for file pusher
