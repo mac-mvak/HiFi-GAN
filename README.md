@@ -6,20 +6,20 @@ Copy this repo.
 
 ```shell
 pip install -r ./requirements.txt
-gdown https://drive.google.com/uc?id=1ym2rlH_CUVZggy81rIJVytBjZrAVE1X3 -O final_data/model.pth
+gdown https://drive.google.com/uc?id=1HPQo1X_go8UJdI8I_csq9QyAyg4sWA0A -O final_data/model.pth
 ```
 
-Then run scripts using `train.py` and `test.py`. `test.py` will print metrics in `output_metrics.json`.
+Then run scripts using `train.py` in order to train our model
 
 Now we will define scripts.
 
-1. `config_test_clean.json` -- get results for Librispeech-clean.
-2. `config_test_other.json` -- get results for Librispeech-other.
-3. `config_train_first.json` -- train on  Librispeech-clean.
-4. `config_train_finetune.json` -- finetune on  Librispeech-other.
+1. `train_config.json` -- training on LJspeech
+
+
+In order to inference our model you should call the script `inference.py`.
 
 
 ## Wandb Report
 
-[Link to report](https://wandb.ai/svak/asr_project/reports/ASR-project---Vmlldzo1Nzg2Mzkx)
+[Link to report](https://wandb.ai/svak/Hi-Fi%20Project/reports/Hi-Fi-GAN-Report--Vmlldzo2MTUyOTMz?accessToken=d6q9c7dn2v9219to9q31uwu3h0750ib6k7apy1zz3jz0nfetpgf1qsk9fnzt9fb6)
 
