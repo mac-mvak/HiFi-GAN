@@ -1,4 +1,4 @@
-# ASR project barebones
+# Hi-Fi project
 
 ## Installation guide
 
